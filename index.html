@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+	<script>
+		const buku = 5000;
+		let pembeli = 3;
+
+        let totalPendapatan =0;
+        let totalBuku= 0;
+		
+		
+		for(let  i = 1;  i <= pembeli; i++){
+			console.log(` Pembeli Ke-${i} `)
+			
+		let diBeli = parseInt(prompt("Jumlah buku yang ingin di Beli"));	
+  
+		if (diBeli === 100) {
+        
+        total = diBeli  * buku;
+		} else if (diBeli > 100 && diBeli  <= 200) {
+        
+        let harga100 = 100 * buku * 0.95;
+       
+        let sisa = (diBeli - 100) * buku * 0.85;
+        total = harga100 + sisa;
+		} else if (diBeli > 200) {
+       
+        let harga100Pertama = 100 * buku * 0.93;
+        
+        let harga100Kedua = 100 * buku * 0.83;
+      
+        let sisa = (diBeli - 200) * buku * 0.73;
+        total = harga100Pertama + buku+ sisa;
+		} else {
+      
+        total = diBeli * buku;
+    }
+    console.log(`Jumlah Buku: ${diBeli}`);
+    console.log(`Total Harga Sebelum Diskon: Rp${hargaSebelumDiskon}`);
+    console.log(`Total Harga Sesudah Diskon: Rp${total}`);
+
+    totalPendapatan += total;
+    totalBuku += diBeli;
+
+}
+console.log(`\n=== Rekapan ===`);
+console.log(`Total Buku Terjual: ${totalBuku}`);
+console.log(`Total Pendapatan: Rp${totalPendapatan}`);
+console.log(`Rata-rata Buku per Pembeli: ${(totalBuku / pembeli).toFixed(2)}`);
+console.log(`Rata-rata Belanja per Pembeli: Rp${(totalPendapatan / pembeli).toFixed(2)}`);
+
+			
+		
+			
+		
+		
+	</script>
+</body>
+</html>
